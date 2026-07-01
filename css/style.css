@@ -776,6 +776,7 @@ padding:60px 20px;
 
 
 
+
 .whatsapp-btn:hover{
 
     transform:translateY(-5px);
@@ -783,25 +784,38 @@ padding:60px 20px;
     box-shadow:0 10px 20px rgba(0,0,0,.2);
 
 }
-/* ==========================
-   LOGO
-========================== */
+.logo img{
+    height:80px;
+    width:auto;
+    transform:scale(1.4);
+    transform-origin:left;
+}
+.logo img{
+    height:90px;
+    width:auto;
+}
+.logo{
+    display:flex;
+    align-items:center;
+}
 
 .logo a{
     display:flex;
     align-items:center;
+    gap:35px;
     text-decoration:none;
-    color:white;
-    gap:12px;
 }
 
 .logo img{
-    width:55px;
-    height:55px;
-    object-fit:contain;
+    height:90px;
+    width: auto;
+    display:block;
 }
 
 .logo span{
-    font-size:24px;
+    color:white;
+    font: size 22px;
     font-weight:700;
+    line-height:1;
+    margin:0;
 }

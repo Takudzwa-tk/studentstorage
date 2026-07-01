@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
 <meta charset="UTF-8">
@@ -8,32 +9,26 @@
 <title>Book Storage</title>
 
 <link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="css/booking.css">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 </head>
 
+
 <body>
+
 
 <header>
 
 <nav class="navbar">
 
 <div class="logo">
-
 Student Storage
-
 </div>
 
 <ul class="nav-links">
 
 <li><a href="index.html">Home</a></li>
-
-<li><a href="payment.html">Payment</a></li>
-
+<li><a href="booking.html">Book Now</a></li>
+<li><a href="payment.html">Payments</a></li>
 <li><a href="contact.html">Contact</a></li>
 
 </ul>
@@ -42,282 +37,153 @@ Student Storage
 
 </header>
 
-<section class="booking">
 
-<h1>Book Your Storage</h1>
 
-<form id="bookingForm">
+<section class="booking-section">
 
-<div class="grid">
 
-<div>
+<div class="booking-container">
 
-<label>First Name</label>
 
-<input
-type="text"
-id="name"
-required>
+<h1>
+Book Your Student Storage
+</h1>
 
-</div>
 
-<div>
+<p>
+Choose your campus and complete your booking.
+</p>
 
-<label>Surname</label>
 
-<input
-type="text"
-id="surname"
-required>
 
-</div>
+<label>
+Select Campus
+</label>
 
-<div>
-
-<label>Student Number</label>
-
-<input
-type="text"
-id="student">
-
-</div>
-
-<div>
-
-<label>Phone Number</label>
-
-<input
-type="tel"
-id="phone"
-required>
-
-</div>
-
-<div>
-
-<label>Email</label>
-
-<input
-type="email"
-id="email">
-
-</div>
-
-<div>
-
-<label>Select Campus</label>
 
 <select id="campus">
 
-<option>Main Campus</option>
+<option value="">
+Choose Campus
+</option>
 
-<option>Richards Bay Campus</option>
+<option value="Richards Bay">
+UNIZULU Richards Bay
+</option>
 
-<option>Richtech</option>
+
+<option value="Main Campus">
+UNIZULU Main Campus
+</option>
+
+
+<option value="Richtech">
+RICHTECH
+</option>
+
 
 </select>
 
-</div>
 
-<div>
 
-<label>Collection Date</label>
+<label>
+Full Name
+</label>
 
-<input
+
+<input 
+type="text" 
+id="name"
+placeholder="Enter your name"
+>
+
+
+
+<label>
+Phone Number
+</label>
+
+
+<input 
+type="tel"
+id="phone"
+placeholder="Your phone number"
+>
+
+
+
+
+<label>
+Items To Store
+</label>
+
+
+<textarea 
+id="items"
+placeholder="Example: 2 bags, suitcase, boxes">
+</textarea>
+
+
+
+
+<label>
+Storage Package
+</label>
+
+
+<select id="package">
+
+
+<option>
+Small Package
+</option>
+
+
+<option>
+Medium Package
+</option>
+
+
+<option>
+Large Package
+</option>
+
+
+</select>
+
+
+
+
+<label>
+Pickup Date
+</label>
+
+
+<input 
 type="date"
-id="collect">
+id="date"
+>
 
-</div>
 
-<div>
 
-<label>Return Date</label>
 
-<input
-type="date"
-id="returnDate">
+<button onclick="sendBooking()">
 
-</div>
-
-</div>
-
-<h2>Select Items</h2>
-
-<div class="items">
-
-<label>
-
-<input
-type="checkbox"
-class="item"
-data-price="45">
-
-Small Suitcase (R45)
-
-</label>
-
-<input
-type="number"
-class="qty"
-value="1"
-min="1">
-
-<label>
-
-<input
-type="checkbox"
-class="item"
-data-price="55">
-
-Medium Suitcase (R55)
-
-</label>
-
-<input
-type="number"
-class="qty"
-value="1"
-min="1">
-
-<label>
-
-<input
-type="checkbox"
-class="item"
-data-price="65">
-
-Large Suitcase (R65)
-
-</label>
-
-<input
-type="number"
-class="qty"
-value="1"
-min="1">
-
-<label>
-
-<input
-type="checkbox"
-class="item"
-data-price="80">
-
-Refrigerator (R80)
-
-</label>
-
-<input
-type="number"
-class="qty"
-value="1"
-min="1">
-
-<label>
-
-<input
-type="checkbox"
-class="item"
-data-price="75">
-
-Storage Box (R75)
-
-</label>
-
-<input
-type="number"
-class="qty"
-value="1"
-min="1">
-
-<label>
-
-<input
-type="checkbox"
-class="item"
-data-price="50">
-
-Blanket (R50)
-
-</label>
-
-<input
-type="number"
-class="qty"
-value="1"
-min="1">
-
-</div>
-
-<h2>Transport Required?</h2>
-
-<label>
-
-<input
-type="radio"
-name="transport"
-value="Yes">
-
-Yes
-
-</label>
-
-<label>
-
-<input
-type="radio"
-name="transport"
-value="No"
-checked>
-
-No
-
-</label>
-
-<h2>Special Instructions</h2>
-
-<textarea
-id="notes"
-rows="5"
-placeholder="Any special requests..."></textarea>
-
-<div class="summary">
-
-<h2>Total Price</h2>
-
-<h1 id="total">
-
-R0
-
-</h1>
-
-</div>
-
-<div class="buttons">
-
-<button
-type="button"
-id="whatsappBtn">
-
-Send Booking via WhatsApp
+Book Via WhatsApp
 
 </button>
 
-<a
-href="payment.html"
-class="payBtn">
 
-Proceed to Payment
-
-</a>
 
 </div>
 
-</form>
 
 </section>
 
+
+
 <script src="js/booking.js"></script>
+
 
 </body>
 
