@@ -783,3 +783,25 @@ padding:60px 20px;
     box-shadow:0 10px 20px rgba(0,0,0,.2);
 
 }
+/* ==========================
+   LOGO
+========================== */
+
+.logo a{
+    display:flex;
+    align-items:center;
+    text-decoration:none;
+    color:white;
+    gap:12px;
+}
+
+.logo img{
+    width:55px;
+    height:55px;
+    object-fit:contain;
+}
+
+.logo span{
+    font-size:24px;
+    font-weight:700;
+}
