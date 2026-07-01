@@ -1,0 +1,619 @@
+/* ==========================
+   GOOGLE FONT & RESET
+========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#f4f6f9;
+    color:#222;
+    line-height:1.6;
+}
+
+/* ==========================
+   NAVBAR
+========================== */
+
+header{
+    position:fixed;
+    top:0;
+    width:100%;
+    z-index:999;
+}
+
+.navbar{
+
+    background:#0b2d52;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:18px 8%;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.2);
+
+}
+
+.logo{
+
+    color:#FDBB2D;
+
+    font-size:28px;
+
+    font-weight:700;
+
+}
+
+.nav-links{
+
+    display:flex;
+
+    list-style:none;
+
+    gap:35px;
+
+}
+
+.nav-links a{
+
+    color:white;
+
+    text-decoration:none;
+
+    font-weight:500;
+
+    transition:.3s;
+
+}
+
+.nav-links a:hover{
+
+    color:#FDBB2D;
+
+}
+
+.menu-btn{
+
+    display:none;
+
+    color:white;
+
+    font-size:28px;
+
+    cursor:pointer;
+
+}
+
+/* ==========================
+   HERO
+========================== */
+
+.hero{
+    margin-top:75px;
+    height:100vh;
+
+    background:
+    linear-gradient(rgba(11,45,82,.65),
+    rgba(11,45,82,.65)),
+
+
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+    background-image:url("../images/hero-bg.png");
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:white;
+}
+
+.overlay{
+
+    max-width:900px;
+
+    padding:20px;
+
+}
+
+.hero h3{
+
+    display:inline-block;
+
+    background:#FDBB2D;
+
+    color:#0b2d52;
+
+    padding:10px 20px;
+
+    border-radius:30px;
+
+    margin-bottom:20px;
+
+}
+
+.hero h1{
+
+    font-size:65px;
+
+    margin-bottom:20px;
+
+}
+
+.hero p{
+
+    font-size:22px;
+
+    margin-bottom:40px;
+
+}
+
+.hero-buttons{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+
+}
+
+.btn,
+.btn2{
+
+    padding:15px 35px;
+
+    border-radius:50px;
+
+    text-decoration:none;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.btn{
+
+    background:#FDBB2D;
+
+    color:#0b2d52;
+
+}
+
+.btn:hover{
+
+    transform:translateY(-4px);
+
+}
+
+.btn2{
+
+    border:2px solid white;
+
+    color:white;
+
+}
+
+.btn2:hover{
+
+    background:white;
+
+    color:#0b2d52;
+
+}
+
+/* ==========================
+   SECTION
+========================== */
+
+section{
+
+    padding:80px 8%;
+
+}
+
+section h2{
+
+    text-align:center;
+
+    font-size:40px;
+
+    margin-bottom:50px;
+
+    color:#0b2d52;
+
+}
+
+/* ==========================
+   CAMPUS
+========================== */
+
+.campus-container{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+
+    gap:30px;
+
+}
+
+.campus-card{
+
+    background:white;
+
+    border-radius:15px;
+
+    overflow:hidden;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.1);
+
+    transition:.3s;
+
+}
+
+.campus-card:hover{
+
+    transform:translateY(-10px);
+
+}
+
+.campus-card img{
+
+    width:100%;
+
+    height:220px;
+
+    object-fit:cover;
+
+}
+
+.campus-card h3{
+
+    padding:20px;
+
+    color:#0b2d52;
+
+}
+
+.campus-card p{
+
+    padding:0 20px 20px;
+
+}
+
+.card-btn{
+
+    display:block;
+
+    background:#FDBB2D;
+
+    color:#0b2d52;
+
+    text-align:center;
+
+    padding:15px;
+
+    text-decoration:none;
+
+    font-weight:bold;
+
+}
+
+/* ==========================
+   SERVICES
+========================== */
+
+.services{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+    gap:25px;
+
+}
+
+.service{
+
+    background:white;
+
+    text-align:center;
+
+    padding:40px 20px;
+
+    border-radius:15px;
+
+    transition:.3s;
+
+    box-shadow:0 5px 20px rgba(0,0,0,.1);
+
+}
+
+.service:hover{
+
+    transform:translateY(-8px);
+
+}
+
+.service i{
+
+    font-size:50px;
+
+    color:#FDBB2D;
+
+    margin-bottom:20px;
+
+}
+
+/* ==========================
+   PRICING
+========================== */
+
+.pricing{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+    gap:25px;
+
+}
+
+.price-card{
+
+    background:#0b2d52;
+
+    color:white;
+
+    border-radius:20px;
+
+    padding:40px;
+
+    text-align:center;
+
+    transition:.3s;
+
+}
+
+.price-card:hover{
+
+    transform:scale(1.05);
+
+}
+
+.price-card h1{
+
+    color:#FDBB2D;
+
+    font-size:50px;
+
+    margin:20px 0;
+
+}
+
+/* ==========================
+   CTA
+========================== */
+
+.cta{
+
+    background:#FDBB2D;
+
+    text-align:center;
+
+    color:#0b2d52;
+
+}
+
+.cta h2{
+
+    color:#0b2d52;
+
+}
+
+.cta a{
+
+    display:inline-block;
+
+    margin-top:30px;
+
+    padding:15px 35px;
+
+    background:#0b2d52;
+
+    color:white;
+
+    border-radius:40px;
+
+    text-decoration:none;
+
+}
+
+/* ==========================
+   CONTACT
+========================== */
+
+.contact-box{
+
+    max-width:700px;
+
+    margin:auto;
+
+    background:white;
+
+    padding:40px;
+
+    border-radius:15px;
+
+    box-shadow:0 5px 20px rgba(0,0,0,.1);
+
+}
+
+.contact-box p{
+
+    margin:20px 0;
+
+    font-size:18px;
+
+}
+
+.contact-box i{
+
+    color:#FDBB2D;
+
+    margin-right:10px;
+
+}
+
+/* ==========================
+   FOOTER
+========================== */
+
+footer{
+
+    background:#0b2d52;
+
+    color:white;
+
+    text-align:center;
+
+    padding:25px;
+
+}
+
+/* ==========================
+   WHATSAPP
+========================== */
+
+.whatsapp{
+
+    position:fixed;
+
+    right:20px;
+
+    bottom:20px;
+
+    width:65px;
+
+    height:65px;
+
+    background:#25D366;
+
+    color:white;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-decoration:none;
+
+    font-size:35px;
+
+    box-shadow:0 5px 20px rgba(0,0,0,.3);
+
+    transition:.3s;
+
+}
+
+.whatsapp:hover{
+
+    transform:scale(1.1);
+
+}
+
+/* ==========================
+   RESPONSIVE
+========================== */
+
+@media(max-width:900px){
+
+.nav-links{
+
+display:none;
+
+}
+
+.menu-btn{
+
+display:block;
+
+}
+
+.hero h1{
+
+font-size:42px;
+
+}
+
+.hero p{
+
+font-size:18px;
+
+}
+
+.hero{
+
+height:80vh;
+
+}
+
+section{
+
+padding:60px 20px;
+
+}
+
+}
+/* Mobile Menu */
+
+.nav-links.show{
+    display:flex;
+    flex-direction:column;
+    position:absolute;
+    top:75px;
+    left:0;
+    width:100%;
+    background:#0b2d52;
+    padding:20px;
+    gap:20px;
+}
+
+/* Active Nav */
+
+.nav-links a.active{
+    color:#FDBB2D;
+}
+
+/* Scroll Animation */
+
+.hidden{
+    opacity:0;
+    transform:translateY(60px);
+    transition:all .8s ease;
+}
+
+.visible{
+    opacity:1;
+    transform:translateY(0);
+}
