@@ -1,13 +1,13 @@
-function sendBooking() {
+function sendBooking(){
 
     const campus = document.getElementById("campus").value;
-    const name = document.getElementById("name").value;
-    const phone = document.getElementById("phone").value;
+    const name = document.getElementById("name").value.trim();
+    const phone = document.getElementById("phone").value.trim();
     const packageType = document.getElementById("package").value;
     const pickupDate = document.getElementById("date").value;
-    const items = document.getElementById("items").value;
+    const items = document.getElementById("items").value.trim();
 
-    if (
+    if(
         campus === "" ||
         name === "" ||
         phone === "" ||
@@ -18,37 +18,52 @@ function sendBooking() {
         return;
     }
 
-    // WhatsApp number based on campus
     let whatsappNumber = "";
 
-    if(campus === "Richards Bay"){
-        whatsappNumber = "27609548435";
-    }
-    else if(campus === "UNIZULU DLANGEZWA"){
-        whatsappNumber = "27609548435";
-    }
-    else if(campus === "Richtech"){
-        whatsappNumber = "27799378747";
+    switch(campus){
+
+        case "Richards Bay":
+            whatsappNumber = "27609548435";
+            break;
+
+        case "UNIZULU DLANGEZWA":
+            whatsappNumber = "27609548435";
+            break;
+
+        case "Richtech":
+            whatsappNumber = "27799378747";
+            break;
+
+        case "Esikhawini":
+            whatsappNumber = "27799378747";
+            break;
     }
 
     const message =
-`📦 STUDENT STORAGE BOOKING
+`📦 *Student Storage Booking*
 
-Campus: ${campus}
+Campus:
+${campus}
 
-Name: ${name}
+Name:
+${name}
 
-Phone: ${phone}
+Phone:
+${phone}
 
-Storage Package: ${packageType}
+Storage Package:
+${packageType}
 
-Pickup Date: ${pickupDate}
+Pickup Date:
+${pickupDate}
 
-Items:
-${items}`;
+Items to Store:
+${items}
+
+Thank you.`;
 
     const url =
 `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
 
-    window.open(url, "_blank");
+    window.open(url,"_blank");
 }
