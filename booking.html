@@ -3,187 +3,149 @@
 
 <head>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Book Storage</title>
+    <title>Book Storage</title>
 
-<link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css">
 
 </head>
 
-
 <body>
-
 
 <header>
 
-<nav class="navbar">
+    <nav class="navbar">
 
-<div class="logo">
-Student Storage
-</div>
+        <div class="logo">
+            Student Storage
+        </div>
 
-<ul class="nav-links">
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="booking.html">Book Now</a></li>
+            <li><a href="payment.html">Payments</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
 
-<li><a href="index.html">Home</a></li>
-<li><a href="booking.html">Book Now</a></li>
-<li><a href="payment.html">Payments</a></li>
-<li><a href="contact.html">Contact</a></li>
-
-</ul>
-
-</nav>
+    </nav>
 
 </header>
 
-
-
 <section class="booking-section">
 
+    <div class="booking-container">
 
-<div class="booking-container">
+        <h1>Book Your Student Storage</h1>
 
+        <p>Choose your campus and complete your booking.</p>
 
-<h1>
-Book Your Student Storage
-</h1>
+        <form class="booking-form">
 
+            <!-- Campus -->
+            <div class="form-group full">
+                <label for="campus">Select Campus</label>
 
-<p>
-Choose your campus and complete your booking.
-</p>
+                <select id="campus">
 
+                    <option value="">Choose Campus</option>
 
+                    <option value="Richards Bay">
+                        UNIZULU Richards Bay
+                    </option>
 
-<label>
-Select Campus
-</label>
+                    <option value="UNIZULU DLANGEZWA">
+                        UNIZULU Main Campus
+                    </option>
 
+                    <option value="Richtech">
+                        RICHTECH
+                    </option>
 
-<select id="campus">
+                </select>
+            </div>
 
-<option value="">
-Choose Campus
-</option>
+            <!-- Name & Phone -->
+            <div class="form-row">
 
-<option value="Richards Bay">
-UNIZULU Richards Bay
-</option>
+                <div class="form-group">
+                    <label for="name">Full Name</label>
 
+                    <input
+                        type="text"
+                        id="name"
+                        placeholder="Enter your full name">
+                </div>
 
-<option value="UNIZULU DLANGEZWA">
-UNIZULU Main Campus
-</option>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
 
+                    <input
+                        type="tel"
+                        id="phone"
+                        placeholder="Enter your phone number">
+                </div>
 
-<option value="Richtech">
-RICHTECH
-</option>
+            </div>
 
+            <!-- Package & Date -->
+            <div class="form-row">
 
-</select>
+                <div class="form-group">
 
+                    <label for="package">Storage Package</label>
 
+                    <select id="package">
 
-<label>
-Full Name
-</label>
+                        <option>Small Package</option>
+                        <option>Medium Package</option>
+                        <option>Large Package</option>
 
+                    </select>
 
-<input 
-type="text" 
-id="name"
-placeholder="Enter your name"
->
+                </div>
 
+                <div class="form-group">
 
+                    <label for="date">Pickup Date</label>
 
-<label>
-Phone Number
-</label>
+                    <input
+                        type="date"
+                        id="date">
 
+                </div>
 
-<input 
-type="tel"
-id="phone"
-placeholder="Your phone number"
->
+            </div>
 
+            <!-- Items -->
+            <div class="form-group full">
 
+                <label for="items">Items To Store</label>
 
+                <textarea
+                    id="items"
+                    rows="6"
+                    placeholder="Example: 2 bags, suitcase, boxes"></textarea>
 
-<label>
-Items To Store
-</label>
+            </div>
 
+            <!-- Button -->
+            <button
+                type="button"
+                onclick="sendBooking()">
 
-<textarea 
-id="items"
-placeholder="Example: 2 bags, suitcase, boxes">
-</textarea>
+                Book Via WhatsApp
 
+            </button>
 
+        </form>
 
-
-<label>
-Storage Package
-</label>
-
-
-<select id="package">
-
-
-<option>
-Small Package
-</option>
-
-
-<option>
-Medium Package
-</option>
-
-
-<option>
-Large Package
-</option>
-
-
-</select>
-
-
-
-
-<label>
-Pickup Date
-</label>
-
-
-<input 
-type="date"
-id="date"
->
-
-
-
-
-<button onclick="sendBooking()">
-
-Book Via WhatsApp
-
-</button>
-
-
-
-</div>
-
+    </div>
 
 </section>
 
-
-
 <script src="js/booking.js"></script>
-
 
 </body>
 
