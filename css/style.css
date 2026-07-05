@@ -836,4 +836,20 @@ padding:60px 20px;
 .whatsapp-btn:hover{
     background:#128C7E !important;
     transform:translateY(-2px);
+}whatsapp-btn{
+    width:50%;
+    background:#25D366 !important;
+    color:white !important;
+    border:none;
+    padding:15px;
+    border-radius:50px;
+    font-size:18px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.whatsapp-btn:hover{
+    background:#128C7E !important;
+    transform:translateY(-2px);
 }
