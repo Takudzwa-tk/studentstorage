@@ -138,6 +138,7 @@ textarea:focus{
     gap:20px;
     flex-wrap:wrap;
     margin-top:30px;
+    background-color: #1EBE5D;
 }
 
 button{
