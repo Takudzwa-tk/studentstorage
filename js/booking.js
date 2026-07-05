@@ -91,6 +91,8 @@ const campusNumbers = {
 
     "Richtech": "27799378747"
 
+    "Esikhawini": "27799378747"
+
 };
 
 
