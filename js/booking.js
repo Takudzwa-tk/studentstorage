@@ -1,119 +1,54 @@
-// Prices are taken from the data-price attribute
-const items = document.querySelectorAll(".item");
-const qtys = document.querySelectorAll(".qty");
-const totalDisplay = document.getElementById("total");
-const whatsappBtn = document.getElementById("whatsappBtn");
+function sendBooking() {
 
-function calculateTotal() {
-    let total = 0;
-
-    items.forEach((item, index) => {
-        if (item.checked) {
-            const price = Number(item.dataset.price);
-            const qty = Number(qtys[index].value) || 1;
-            total += price * qty;
-        }
-    });
-
-    totalDisplay.textContent = "R" + total;
-    return total;
-}
-
-// Update total whenever something changes
-items.forEach(item => item.addEventListener("change", calculateTotal));
-qtys.forEach(qty => qty.addEventListener("input", calculateTotal));
-
-// Initial calculation
-calculateTotal();
-
-// WhatsApp booking
-whatsappBtn.addEventListener("click", () => {
-
-    const name = document.getElementById("name").value;
-    const surname = document.getElementById("surname").value;
-    const student = document.getElementById("student").value;
-    const phone = document.getElementById("phone").value;
-    const email = document.getElementById("email").value;
     const campus = document.getElementById("campus").value;
-    const collect = document.getElementById("collect").value;
-    const returnDate = document.getElementById("returnDate").value;
-    const notes = document.getElementById("notes").value;
+    const name = document.getElementById("name").value;
+    const phone = document.getElementById("phone").value;
+    const packageType = document.getElementById("package").value;
+    const pickupDate = document.getElementById("date").value;
+    const items = document.getElementById("items").value;
 
-    const transport =
-        document.querySelector('input[name="transport"]:checked').value;
+    if (
+        campus === "" ||
+        name === "" ||
+        phone === "" ||
+        pickupDate === "" ||
+        items === ""
+    ){
+        alert("Please complete all the fields.");
+        return;
+    }
 
-    let selectedItems = "";
+    // WhatsApp number based on campus
+    let whatsappNumber = "";
 
-    items.forEach((item, index) => {
-        if (item.checked) {
-            selectedItems +=
-                `• ${item.parentElement.textContent.trim()} x ${qtys[index].value}\n`;
-        }
-    });
+    if(campus === "Richards Bay"){
+        whatsappNumber = "27609548435";
+    }
+    else if(campus === "UNIZULU DLANGEZWA"){
+        whatsappNumber = "27609548435";
+    }
+    else if(campus === "Richtech"){
+        whatsappNumber = "27799378747";
+    }
 
-    const total = calculateTotal();
-
-    const message = `Hello Student Storage,
-
-I'd like to book storage.
-
-Name: ${name} ${surname}
-
-Student Number: ${student}
-
-Phone: ${phone}
-
-Email: ${email}
+    const message =
+`📦 STUDENT STORAGE BOOKING
 
 Campus: ${campus}
 
-Collection Date: ${collect}
+Name: ${name}
 
-Return Date: ${returnDate}
+Phone: ${phone}
 
-Transport: ${transport}
+Storage Package: ${packageType}
+
+Pickup Date: ${pickupDate}
 
 Items:
-${selectedItems}
+${items}`;
 
-Special Notes:
-${notes}
+    const url =
+`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
 
-Estimated Total: R${total}`;
-
-   // Campus WhatsApp numbers
-
-const campusNumbers = {
-
-    "Richards Bay": "27609548435",
-
-    "Main Campus": "27609548435",
-
-    "Richtech": "27799378747"
-
-    "Esikhawini": "27799378747"
-
-};
-
-
-// Get the correct WhatsApp number
-
-const whatsappNumber = campusNumbers[campus];
-
-
-// Check if campus was selected
-
-if (!whatsappNumber) {
-
-    alert("Please select a campus");
-
-    return;
-
+    window.open(url, "_blank");
 }
-
-// Open WhatsApp with correct campus number
-
-window.open(
-    "https://wa.me/" + whatsappNumber + "?text=" + encodeURIComponent(message),
-    "_blank"
-);
