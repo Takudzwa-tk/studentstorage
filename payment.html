@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -11,102 +10,85 @@
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/payment.css">
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<!-- QR CODE LIBRARY -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 
 </head>
 
 <body>
 
 <header>
-
 <nav class="navbar">
-
-<div class="logo">
-
-Student Storage
-
-</div>
+<div class="logo">Student Storage</div>
 
 <ul class="nav-links">
-
 <li><a href="index.html">Home</a></li>
 <li><a href="booking.html">Booking</a></li>
 <li><a href="contact.html">Contact</a></li>
-
 </ul>
 
 </nav>
-
 </header>
 
 <section class="payment-page">
 
 <h1>EFT Payment</h1>
 
+<!-- ITEMS -->
+<div class="upload-card">
+
+<h2>Select Items</h2>
+
+<label><input type="checkbox" class="item" value="Small Suitcase"> Small Suitcase (R45)</label><br>
+<label><input type="checkbox" class="item" value="Medium Suitcase"> Medium Suitcase (R55)</label><br>
+<label><input type="checkbox" class="item" value="Large Suitcase"> Large Suitcase (R65)</label><br>
+<label><input type="checkbox" class="item" value="Storage Box"> Storage Box (R75)</label><br>
+<label><input type="checkbox" class="item" value="Refrigerator"> Refrigerator (R80)</label><br>
+<label><input type="checkbox" class="item" value="Blanket Storage"> Blanket Storage (R50)</label>
+
+<h2 id="totalDisplay">Total: R0</h2>
+
+</div>
+
 <div class="payment-grid">
 
+<!-- BANK DETAILS -->
 <div class="bank-card">
 
 <h2>Banking Details</h2>
 
-<div class="detail">
-<strong>Bank</strong>
-<p>Capitec Bank</p>
-</div>
+<p><strong>Bank:</strong> Capitec Bank</p>
+<p><strong>Account:</strong> Student Storage</p>
+<p><strong>Account Number:</strong> 1234567890</p>
+<p><strong>Branch:</strong> 470010</p>
 
-<div class="detail">
-<strong>Account Name</strong>
-<p>Student Storage</p>
-</div>
-
-<div class="detail">
-<strong>Student Storage</strong>
-<p>1234567890</p>
-</div>
-
-<div class="detail">
-<strong>Branch Code</strong>
-<p>470010</p>
-</div>
-
-<div class="detail">
-<strong>Reference</strong>
-<p id="reference"></p>
-</div>
+<p><strong>Reference:</strong> <span id="reference"></span></p>
 
 </div>
 
+<!-- QR CODE -->
 <div class="qr-card">
 
 <h2>Scan To Pay</h2>
 
-<img src="images/qr.png" alt="QR Code">
+<div id="qrcode"></div>
 
-<p>
-
-Scan using your banking app or scanning app.
-
-</p>
+<p>Scan using your banking app</p>
 
 </div>
 
 </div>
 
+<!-- PROOF OF PAYMENT -->
 <div class="upload-card">
 
 <h2>Upload Proof of Payment</h2>
 
-<input
-type="file"
-id="pop">
+<input type="file" id="pop">
 
 <br><br>
 
-<button id="paidBtn">
-
-I've Paid
-
-</button>
+<button id="paidBtn">I've Paid</button>
 
 </div>
 
@@ -115,5 +97,4 @@ I've Paid
 <script src="js/payment.js"></script>
 
 </body>
-
 </html>
